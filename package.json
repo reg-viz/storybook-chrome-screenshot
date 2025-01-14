@@ -45,7 +45,7 @@
     "cpy": "8.1.2",
     "cpy-cli": "5.0.0",
     "eslint": "8.57.1",
-    "eslint-config-prettier": "8.10.0",
+    "eslint-config-prettier": "10.0.1",
     "gh-pages": "6.3.0",
     "husky": "9.1.7",
     "lerna": "4.0.0",
