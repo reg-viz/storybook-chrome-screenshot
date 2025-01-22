@@ -86,7 +86,7 @@
   "dependencies": {
     "mkdirp": "^3.0.0",
     "nanomatch": "^1.2.13",
-    "puppeteer-core": "^9.0.0",
+    "puppeteer-core": "^24.0.0",
     "rimraf": "^6.0.0",
     "sanitize-filename": "^1.6.3",
     "storycrawler": "^5.0.1",

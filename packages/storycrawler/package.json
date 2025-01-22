@@ -50,7 +50,7 @@
   },
   "dependencies": {
     "chalk": "^2.4.1",
-    "puppeteer-core": "^9.0.0",
+    "puppeteer-core": "^24.0.0",
     "wait-on": "^8.0.0"
   },
   "jest": {
