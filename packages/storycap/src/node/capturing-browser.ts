@@ -107,6 +107,7 @@ export class CapturingBrowser extends StoryPreviewBrowser {
       getBaseScreenshotOptions: () => this.baseScreenshotOptions,
       getCurrentVariantKey: () => this.currentVariantKey,
       waitBrowserMetricsStable: () => this.waitBrowserMetricsStable('preEmit'),
+      setViewport: (viewport: Viewport) => this.page.setViewport(viewport),
     };
     await Promise.all(Object.entries(exposed).map(([k, f]) => this.page.exposeFunction(k, f)));
   }

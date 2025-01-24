@@ -71,4 +71,5 @@ export interface Exposed {
   getBaseScreenshotOptions(): StrictScreenshotOptions;
   getCurrentVariantKey(): VariantKey;
   waitBrowserMetricsStable(): Promise<void>;
+  setViewport(vp: Viewport): Promise<void>;
 }
