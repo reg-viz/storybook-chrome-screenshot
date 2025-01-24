@@ -78,8 +78,7 @@ export class StoriesBrowser extends BaseBrowser {
         timeout: 60_000,
       },
     );
-    await this.page.waitForTimeout(500);
-    await this.page.evaluate(() => {
+    await this.page.evaluate(async () => {
       const api = (window as ExposedWindow).__STORYBOOK_CLIENT_API__ || (window as ExposedWindow).__STORYBOOK_PREVIEW__;
       function isPreviewApi(api: API | PreviewAPI): api is PreviewAPI {
         return (api as PreviewAPI).storyStoreValue !== undefined;
@@ -87,9 +86,9 @@ export class StoriesBrowser extends BaseBrowser {
       if (api === undefined) return;
 
       if (isPreviewApi(api)) {
-        return api.storyStoreValue && api.storyStoreValue.cacheAllCSFFiles();
+        return api.storyStoreValue && (await api.storyStoreValue.cacheAllCSFFiles());
       }
-      return api.storyStore?.cacheAllCSFFiles && api.storyStore.cacheAllCSFFiles();
+      return api.storyStore?.cacheAllCSFFiles && (await api.storyStore.cacheAllCSFFiles());
     });
     const result = await this.page.evaluate(() => {
       function isPreviewApi(api: API | PreviewAPI): api is PreviewAPI {
